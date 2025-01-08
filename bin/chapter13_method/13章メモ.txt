@@ -1,0 +1,47 @@
+メソッドの設計方法
+
+・メソッドは必ず自身のクラスのインスタンス変数を使うよう設計する。
+・不変をベースに予期せぬ動作を防ぐ関数にすること。
+・getter/setterは「よそのクラスを気にしたりいじったりするメソッド構造」に陥りやすい。メソッドの呼び出し側で複雑な処理をさせるのではなく、呼び出されるメソッドの側で複雑な制御をするよう設計する。
+例）
+/** 装備中の防具一覧 */
+class Equipments {
+  private boolean canChange;
+  private Equipment head;
+  private Equipment armor;
+  private Equipment arm;
+
+  /**
+   * 鎧を装備する
+   *
+   * @param newArmor 装備する鎧
+   */
+  void equipArmor(final Equipment newArmor) {
+    if (canChange) {
+      armor = newArmor;
+    }
+  }
+
+  /**
+   * 全装備を解除する
+   */
+  void deactivateAll() {
+    head = Equipment.Empty;
+    armor = Equipment.Empty;
+    arm = Equipment.Empty;
+  }
+}
+
+・コマンド・クエリ分離(CQS)を行う。
+
+【引数】
+・引数は不変にすること
+・フラグ引数は使わない
+・nullを渡さない
+・出力引数は使わない
+・引数は可能な限り少なくする
+
+【戻り値】
+・「型」を使って戻り値の意図を明確にすること
+・nullを返さない
+・エラーは戻り値で返さない、例外をスローすること

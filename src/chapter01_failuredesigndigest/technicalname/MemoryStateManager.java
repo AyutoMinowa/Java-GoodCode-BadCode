@@ -1,5 +1,7 @@
 package chapter01_failuredesigndigest.technicalname;
 
+//技術駆動命名
+//書くロジックの意図が全く読み取れない
 class MemoryStateManager {
   int intValue01;
   boolean state02;

@@ -1,0 +1,10 @@
+1. 仕様変更時に牙をむく悪魔
+さまざまな箇所で同じようなロジックが実装されてしまう。
+
+2. 重複コード
+3. 修正漏れ
+4. 可動性低下
+5. 未初期化状態(生焼けオブジェクト)
+Contract Amount amount = new ContractAmount();
+System.out.println(amount.salesTaxRate.toString());
+6. 不正値の混入

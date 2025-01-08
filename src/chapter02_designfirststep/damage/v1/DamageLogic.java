@@ -1,5 +1,7 @@
 package chapter02_designfirststep.damage.v1;
 
+//意図が伝わらない
+//意図が伝わる名前を付けよう
 public class DamageLogic {
   int p1;
   int p2;
