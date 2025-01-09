@@ -1,5 +1,6 @@
 package chapter08_conditionbranch.switchcase.measurement.v1;
 
+// 四角形
 class Rectangle {
   private final double width;
   private final double height;
